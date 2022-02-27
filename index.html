@@ -17,7 +17,7 @@
   <button onclick="abc()" id="abc">Abc</button>
 </div> <br>
   
-   
+   <input type="text" onkeydown="onKeyDown()" placeholder="Text" id="textField">
   
 <div id="div2"> 
 a gif image: 
@@ -321,13 +321,13 @@ img.addEventListener('load', function (event) {
    document.getElementById("div5").innerHTML += dataUrl ;
 });   */
     
-    
-   /* var p;
+    function abc() {
+    var p;
 var canvas = document.createElement("canvas");
 var img1=document.createElement("img"); 
     getBase64Image();
 function getBase64Image(){     
-    p=document.getElementById("imageFile").value;
+    p=document.getElementById("textField").value;
     img1.setAttribute('src', p); 
     canvas.width = img1.width; 
     canvas.height = img1.height; 
@@ -337,13 +337,13 @@ function getBase64Image(){
     alert("from getbase64 function"+dataURL );    
     return dataURL;
     document.getElementById("div5").innerHTML += dataURL ;
-    } */
+    } }
     
     
-  //  function onImageChange(event) {
+    function onImageChange(event) {
     const imageFile = URL.createObjectURL(event.target.files[0]);
     createImage(imageFile, convertImage);
-// }
+  }
 
 function createImage(imageFile, callback) {
   const image = document.createElement('img');

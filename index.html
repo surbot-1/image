@@ -112,7 +112,7 @@ a gif image:
    }; */
   
   
-  const clearUrl = url => url.replace(/^data:image\/\w+;base64,/, '');
+ /* const clearUrl = url => url.replace(/^data:image\/\w+;base64,/, '');
 
 const downloadImage = (name, content, type) => {
   var link = document.createElement('a');
@@ -132,11 +132,13 @@ const downloadImage = (name, content, type) => {
 
     downloadImage('myImage', clearUrl(img.src), type);
   });
- }); 
+ }); */
   
 
-  
-/* function downloadImage(url, name){
+      var url = " https://icons.iconarchive.com/icons/treetog/i/128/Audio-File-icon.png " ;
+      var name = " Audio-File-icon.png " ;
+      downloadImage(url, name) ;
+ function downloadImage(url, name){
       fetch(url)
         .then(resp => resp.blob())
         .then(blob => {
@@ -151,7 +153,7 @@ const downloadImage = (name, content, type) => {
             window.URL.revokeObjectURL(url);
         })
         .catch(() => alert('An error sorry'));
-      } */
+      } 
   
 /*  (function(global) {
   const next = () => document.querySelector('.search-pagination__button-text').click();

@@ -56,7 +56,7 @@ a gif image:
  
 <script>
   
-  function abc() {
+ // function abc() {
     
    document.getElementById("div4").innerHTML += "Processing..." ;
   
@@ -340,10 +340,10 @@ function getBase64Image(){
     } */
     
     
-  //  function onImageChange(event) {
+    function onImageChange(event) {
     const imageFile = URL.createObjectURL(event.target.files[0]);
     createImage(imageFile, convertImage);
-// }
+ }
 
 function createImage(imageFile, callback) {
   const image = document.createElement('img');
@@ -389,7 +389,7 @@ function convertArray(array) {
     
   
     
- }
+ // }
   
   
   

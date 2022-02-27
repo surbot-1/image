@@ -205,7 +205,7 @@ document.body.appendChild(link);
     var reader = new FileReader();
 reader.addEventListener("loadend", function() {
    // reader.result contains the contents of blob as a typed array
-  document.getElementById("div4").innerHTML += reader.readAsArrayBuffer(blob) ;
+  document.getElementById("div4").innerHTML += reader.result ;
 });
 reader.readAsArrayBuffer(blob);
     

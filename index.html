@@ -342,7 +342,7 @@ function getBase64Image(){
     }
     
     
-    function onImageChange(event) {
+ /*   function onImageChange(event) {
     const imageFile = URL.createObjectURL(event.target.files[0]);
     createImage(imageFile, convertImage);
   }
@@ -387,8 +387,27 @@ function drawImageToCanvas(image) {
 
 function convertArray(array) {
   return JSON.stringify(array).replace(/\[/g, '{').replace(/\]/g, '}');
-}
-    
+} */
+  
+  
+  const input = document.querySelector('input');
+const reader = new FileReader();
+const fileByteArray = [];
+
+input.addEventListener('change', (e) => {
+  reader.readAsArrayBuffer(e.target.files[0]);
+  reader.onloadend = (evt) => {
+    if (evt.target.readyState === FileReader.DONE) {
+      const arrayBuffer = evt.target.result;
+        array = new Uint8Array(arrayBuffer);
+      for (const a of array) {
+        fileByteArray.push(a);
+      }
+      console.log(fileByteArray);
+      document.getElementById('div5').innerHTML += fileByteArray;
+    }
+  }
+});
   
     
 //  }

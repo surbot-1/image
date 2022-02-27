@@ -184,7 +184,7 @@ const downloadImage = (name, content, type) => {
   })(window);  */
     
     
-    function typedArrayToURL(typedArray, mimeType) {
+/*    function typedArrayToURL(typedArray, mimeType) {
   return URL.createObjectURL(new Blob([typedArray.buffer], {type: mimeType}))
 }
 
@@ -207,14 +207,14 @@ reader.addEventListener("loadend", function() {
    // reader.result contains the contents of blob as a typed array
   document.getElementById("div4").innerHTML += reader.result ;
 });
-reader.readAsArrayBuffer(blob);
+reader.readAsArrayBuffer(blob);  */
     
    // const text = await (new Response(blob)).text();
    // const text = await blob.text(); 
    //  document.getElementById("div4").innerHTML += text ;
     
   
- /*   var abc = new Blob(["ABCD"],  
+    var abc = new Blob(["ABCD"],  
 
                 {type : "text/plain"}); 
 
@@ -228,7 +228,7 @@ def.addEventListener("loadend", function(e) {
 }); 
 
   
-def.readAsText(abc);  */
+def.readAsText(abc);  
     
   
   

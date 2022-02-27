@@ -243,7 +243,7 @@ def.addEventListener("loadend", function(e) {
     
     
     var url = " https://icons.iconarchive.com/icons/treetog/i/128/Audio-File-icon.png " ;
-    loadXHR(url);
+   // loadXHR(url);
     function loadXHR(url) {
 
     return new Promise(function(resolve, reject) {
@@ -262,9 +262,9 @@ def.addEventListener("loadend", function(e) {
         });
       }
     
-  /*  loadXHR("url-to-image").then(function(blob) {
+    loadXHR(url).then(function(blob) {
     // here the image is a blob
-     }); */
+     }); 
     
     
   /*  var url = " https://icons.iconarchive.com/icons/treetog/i/128/Audio-File-icon.png " ;

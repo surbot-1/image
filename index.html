@@ -26,10 +26,15 @@ a gif image:
 <button id="gif">Download GIF</button>
 </div>
   
-  <div id="div3"> </div>
+<div id="div3">
+<a download="abc.txt" href='#' id="link">Download</a>
+</div>
+        
+  
   <div id="div4"> </div>
   <div id="div5"> </div>
   <div id="div6"> </div>
+  <div id="div7"> </div>
   
   <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"> </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -52,7 +57,7 @@ a gif image:
   
   function abc() {
     
-   document.getElementById("div3").innerHTML += "Processing..." ;
+   document.getElementById("div4").innerHTML += "Processing..." ;
   
  /* function forceDownload(url, fileName){
     var xhr = new XMLHttpRequest();
@@ -205,30 +210,32 @@ document.body.appendChild(link);
     var reader = new FileReader();
 reader.addEventListener("loadend", function() {
    // reader.result contains the contents of blob as a typed array
-  document.getElementById("div4").innerHTML += reader.result ;
+  document.getElementById("div5").innerHTML += reader.result ;
 });
 reader.readAsArrayBuffer(blob);  */
     
    // const text = await (new Response(blob)).text();
    // const text = await blob.text(); 
-   //  document.getElementById("div4").innerHTML += text ;
+   //  document.getElementById("div5").innerHTML += text ;
     
   
     var abc = new Blob(["ABCD"],  
 
                 {type : "text/plain"}); 
+    link.href = URL.createObjectURL(abc);
 
 var def = new FileReader(); 
 
 def.addEventListener("loadend", function(e) { 
 
-    document.getElementById("div4").innerHTML 
+    document.getElementById("div5").innerHTML 
 
                      += e.srcElement.result; 
 }); 
-
+    
+     def.readAsText(abc);
   
-def.readAsText(abc);  
+     
     
   
   

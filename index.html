@@ -222,7 +222,7 @@ reader.readAsArrayBuffer(blob);  */
     var abc = new Blob(["ABCD"],  
 
                 {type : "text/plain"}); 
-    link.href = URL.createObjectURL(abc);
+    
 
 var def = new FileReader(); 
 
@@ -235,10 +235,11 @@ def.addEventListener("loadend", function(e) {
     
      def.readAsText(abc);
   
-     
+     link.href = URL.createObjectURL(abc);
     
-  
-  
+     def.onload = function (event) {
+     let res = def.result ;
+     };
   
     
 }

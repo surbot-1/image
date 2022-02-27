@@ -13,7 +13,7 @@
   <input type="file" id="files" name="files[]" multiple />
   <button onclick="uploadFile()">Upload</button>
   <button onclick="downloadFile()">Download</button>
-  <button onclick="abc()">Abc</button>
+  <button onclick="abc()" id="abc">Abc</button>
 </div> <br>
   
    
@@ -157,7 +157,7 @@ const downloadImage = (name, content, type) => {
       } */
   
 /*  (function(global) {
-  const next = () => document.querySelector('.search-pagination__button-text').click();
+  const next = () => document.querySelector(' abc /* .search-pagination__button-text */ ').click();
   const uuid = () => Math.random().toString(36).substring(7);
   const toBlob = (src) => new Promise((res) => {
     const img = document.createElement('img');

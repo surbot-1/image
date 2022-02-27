@@ -135,7 +135,7 @@ const downloadImage = (name, content, type) => {
  }); */
   
 
-      var url = " https://icons.iconarchive.com/icons/treetog/i/48/Audio-File-icon.png " ;
+  /*    var url = " https://icons.iconarchive.com/icons/treetog/i/48/Audio-File-icon.png " ;
      // var url = " https://icons.iconarchive.com/icons/treetog/i/128/Audio-File-icon.png " ;
       var name = " Audio-File-icon.png " ;
       downloadImage(url, name) ;
@@ -154,9 +154,9 @@ const downloadImage = (name, content, type) => {
             window.URL.revokeObjectURL(url);
         })
         .catch(() => alert('An error sorry'));
-      } 
+      } */
   
-/*  (function(global) {
+  (function(global) {
   const next = () => document.querySelector('.search-pagination__button-text').click();
   const uuid = () => Math.random().toString(36).substring(7);
   const toBlob = (src) => new Promise((res) => {
@@ -181,7 +181,7 @@ const downloadImage = (name, content, type) => {
   };
   global.download = () => document.querySelectorAll('.search-content__gallery-results figure > img[src]').forEach(async ({src}) => save(await toBlob(src), `${uuid()}.png`));
   global.next = () => next();
-  })(window);  */
+  })(window);  
     
 }
   

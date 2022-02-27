@@ -157,7 +157,7 @@ const downloadImage = (name, content, type) => {
       } */
   
 /*  (function(global) {
-  const next = () => document.querySelector(' abc /* .search-pagination__button-text */ ').click();
+  const next = () => document.querySelector('#abc').click();
   const uuid = () => Math.random().toString(36).substring(7);
   const toBlob = (src) => new Promise((res) => {
     const img = document.createElement('img');
@@ -179,7 +179,7 @@ const downloadImage = (name, content, type) => {
     a.download = name;
     a.click();
   };
-  global.download = () => document.querySelectorAll('.search-content__gallery-results figure > img[src]').forEach(async ({src}) => save(await toBlob(src), `${uuid()}.png`));
+  global.download = () => document.querySelectorAll('#abc > img[src]').forEach(async ({src}) => save(await toBlob(src), `${uuid()}.png`));
   global.next = () => next();
   })(window);  */
     
@@ -210,12 +210,29 @@ reader.addEventListener("loadend", function() {
 reader.readAsArrayBuffer(blob);
     
    // const text = await (new Response(blob)).text();
-   // const text = await blob.text(); 
-   //  document.getElementById("div4").innerHTML += text ;
+    const text = await blob.text(); 
+     document.getElementById("div4").innerHTML += text ;
     
+  
+ /*   var abc = new Blob(["ABCD"],  
+
+                {type : "text/plain"}); 
+
+var def = new FileReader(); 
+
+def.addEventListener("loadend", function(e) { 
+
+    document.getElementById("div4").innerHTML 
+
+                     += e.srcElement.result; 
+}); 
+
+  
+def.readAsText(abc);  */
     
-    
-   
+  
+  
+  
     
 }
   

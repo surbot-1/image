@@ -212,14 +212,14 @@ reader.addEventListener("loadend", function() {
    // reader.result contains the contents of blob as a typed array
   document.getElementById("div5").innerHTML += reader.result ;
 });
-reader.readAsArrayBuffer(blob);  */
+reader.readAsArrayBuffer(blob);  
     
    // const text = await (new Response(blob)).text();
    // const text = await blob.text(); 
-   //  document.getElementById("div5").innerHTML += text ;
+   //  document.getElementById("div5").innerHTML += text ;  */
     
   
-    var abc = new Blob(["ABCD"],  
+/*    var abc = new Blob(["ABCD"],  
 
                 {type : "text/plain"}); 
     
@@ -239,7 +239,49 @@ def.addEventListener("loadend", function(e) {
     
      def.onload = function (event) {
      let res = def.result ;
-     };
+     }; */
+    
+    
+    var url = " https://icons.iconarchive.com/icons/treetog/i/128/Audio-File-icon.png " ;
+    loadXHR(url);
+    function loadXHR(url) {
+
+    return new Promise(function(resolve, reject) {
+        try {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.responseType = "blob";
+            xhr.onerror = function() {reject("Network error.")};
+            xhr.onload = function() {
+                if (xhr.status === 200) {resolve(xhr.response)}
+                else {reject("Loading error:" + xhr.statusText)}
+            };
+            xhr.send();
+        }
+        catch(err) {reject(err.message)}
+        });
+      }
+    
+  /*  loadXHR("url-to-image").then(function(blob) {
+    // here the image is a blob
+     }); */
+    
+    
+  /*  var url = " https://icons.iconarchive.com/icons/treetog/i/128/Audio-File-icon.png " ;
+   var img = new Image;
+var c = document.createElement("canvas");
+var ctx = c.getContext("2d");
+
+img.onload = function() {
+  c.width = this.naturalWidth;     // update canvas size to match image
+  c.height = this.naturalHeight;
+  ctx.drawImage(this, 0, 0);       // draw in image
+  c.toBlob(function(blob) {        // get content as JPEG blob
+    // here the image is a blob
+  }, "image/jpeg", 0.75);
+};
+img.crossOrigin = "";              // if from different origin
+img.src = url ;  */
   
     
 }
